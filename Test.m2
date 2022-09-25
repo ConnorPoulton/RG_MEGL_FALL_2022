@@ -8,9 +8,6 @@ I = ideal(value I1)
 
 C = primaryDecomposition I;
 
-print "prim decomp";
-print C;
-
 rmdupes = i ->
 (
     for a from 0 to numgens i - 1 do --scan each generator
@@ -31,13 +28,7 @@ rmdupes = i ->
 
 scan(C, rmdupes)
 
-print "without dupes";
-print C;
-
 C = intersect(C)
-
-print "intersect of C"
-print C;
 
 D = first entries gens C
 
@@ -54,6 +45,30 @@ chckdivsble C
 print "Almost cannonical"
 print D;
 
-print D;
+I = ideal D
 
-I = ideal D;
+E = first entries gens I
+
+rmvmultples = i ->
+(
+    for a from 0 to numgens i - 1 do
+    (
+        for b from 0 to numgens i - 1 do
+        (
+            if i_b % i_a == 0 and i_b != i_a then
+            (
+                print "test";
+                E = delete(i_b, E)
+            )
+        )
+    )
+)
+
+
+
+rmvmultples I
+
+I = ideal E;
+
+print "cannonical form saved to variable I"
+print E;
