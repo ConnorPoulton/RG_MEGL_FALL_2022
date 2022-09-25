@@ -42,9 +42,6 @@ chckdivsble = i ->
 
 chckdivsble C
 
-print "Almost cannonical"
-print D;
-
 I = ideal D
 
 E = first entries gens I
@@ -57,7 +54,6 @@ rmvmultples = i ->
         (
             if i_b % i_a == 0 and i_b != i_a then
             (
-                print "test";
                 E = delete(i_b, E)
             )
         )
