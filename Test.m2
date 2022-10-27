@@ -1,7 +1,9 @@
 F = ZZ/2;
 RingLength = read "Ring Length:"
 RL = value RingLength
-R = F[x_1..x_RL,y_1..y_RL, Degrees=>{1..RL*2}]
+PolarizedVariables  = read "Polarized Variables:" 
+PV = value PolarizedVariables
+R = F[x_1..x_RL,y_1..y_RL,PV]
 
 I1 = read "Ideal :"
 I = ideal(value I1)
