@@ -4,7 +4,7 @@ RL = value RingLength
 PolarizedVariables  = read "Polarized Variables:"
 PV = value PolarizedVariables
 R = F[x_1..x_RL,y_1..y_RL]
-if PV != null then
+try if PV == z then
     R = F[x_1..x_RL,y_1..y_RL,PV]
 
 
